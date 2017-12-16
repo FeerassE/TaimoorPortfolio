@@ -18,9 +18,8 @@ nav a {
 
 #mobile-nav-container {
   width: 100%;
-  position: "fixed";
-  z-index: "3";
-  background-color: "white"; }
+  z-index: 3;
+  background-color: white; }
 
 .nav-link {
   font-family: 'Oswald', sans-serif;
@@ -45,3 +44,9 @@ nav a {
 #nav_bar_container {
   padding-left: 20px;
   padding-right: 15px; }
+
+.drop-down-list {
+  padding-left: 50vh;
+  padding-top: 50vh;
+  font-size: 8.2vh;
+  font-size: 4.5vw; }

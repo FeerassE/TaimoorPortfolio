@@ -23,18 +23,18 @@ class DropDown extends Component {
             )
         } 
         return (
-                <div className= "dropDownMenu" style={{paddingTop: "50px"}}>
+                <div className= "dropDownMenu">
                     <div className= "col-sm-12">
-                        <ul>
-                            <li onClickSelection={this.onClickSelection("/")}>
+                        <ul className="nav flex-column drop-down-list">
+                            <li onClickSelection={this.onClickSelection("/")} className="nav-item">
                                 <Link to='/'>
                                     Gallery
                                 </Link>
                             </li>
-                            <li>
+                            <li className="nav-item">
                                 Services
                             </li>
-                            <li>
+                            <li className="nav-item">
                                 Blog
                             </li>
                         </ul>
