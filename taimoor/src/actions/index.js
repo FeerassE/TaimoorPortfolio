@@ -7,6 +7,9 @@ const CONSUMER_SECRET = "A2xlpFDe4eChxps6qaAENKADTpeIFgBEbVqgWDeT";
 
 
 export const FETCH_PHOTOS = 'fetch_photos';
+export const RESIZE = 'resize';
+export const PATH = 'path';
+
 
 export function fetchPhotos() {
     const request = axios.get(`${ROOT_URL}${ALL_PHOTOS}&consumer_key=${CONSUMER_KEY}`)
@@ -15,5 +18,19 @@ export function fetchPhotos() {
         type: FETCH_PHOTOS,
         payload: request
     };
+}
+
+export function updateDimensions(width, height) {
+    return {
+        type: RESIZE,
+        payload: {width, height} 
+    }
+}
+
+export function updateCurrentRoute(path) {
+    return {
+        type: PATH,
+        payload: path
+    }
 }
 

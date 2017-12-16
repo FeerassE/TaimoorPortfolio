@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 
-import Home from './Home';
+import Gallery from './Gallery';
+import DropDown from './DropDown';
 
 // Router changes between pages
 class Main extends Component{ 
-    
     render(){
         return (
-            <div className="col-md-10 col-xs-12">
+            <div className="col-xs-12 col-md-10">
                 <main>
-                    <BrowserRouter>
-                        <div>
-                            <Switch>
-                                <Route path="/" component={Home}/>
-                            </Switch>
-                        </div>
-                    </BrowserRouter>
+                    <div>
+                        <Switch>
+                            <Route path="/" exact component={Gallery}/>
+                            <Route Path="/menu" component={DropDown}/>
+                        </Switch>
+                    </div>
                 </main>
             </div>
         )

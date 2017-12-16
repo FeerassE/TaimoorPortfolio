@@ -4,14 +4,15 @@ import { Button, Collapse, Well } from 'react-bootstrap';
 class NavBar extends Component {
     render(){
         return (
-            <div className="col-md-2">
+            <div className="col-md-2 d-none d-md-block"  id="nav_bar_container">
                 <div id="nav_bar">
                     <nav aria-orientation="vertical">
-                        <h1 className="menu-title-taimoor"> Taimoor Khan </h1>
-                        <a className="nav-link active" href="#">Home</a>
-                        <a className="nav-link" href="#">Gallery</a>
-                        <a className="nav-link" href="#">Services</a>
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        <h1 id="menu-title-taimoor"> Taimoor Khan </h1>
+                        <div className="nav-selections">
+                            <a className="nav-link" id="nav-item" href="#">Gallery</a>
+                            <a className="nav-link" id="nav-item" href="#">Services</a>
+                            <a className="nav-link disabled" id="nav-item" href="#">Disabled</a>
+                        </div>
                     </nav>
                 </div> 
             </div>
