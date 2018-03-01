@@ -17,43 +17,42 @@ class Gallery extends Component {
     renderGallery() {
         const photoArray = _.map(this.props.photos, (photo) => {
             return (
-                <div key = {photo.id} className="col-xs-12 col-sm-6 col-md-3 p-1 " id="gallery-col">
+                <div key = {photo.id} id="gallery-img">
                     <img
-                        className="gallery-image img-fluid w-100 h-100"
-                        src={`${photo.image_url}`}
+                    src={`${photo.image_url}`}
                     />
                 </div>
             )
         })
 
-        const rows = _.chunk(photoArray, 4)
-        return rows.map((row,index) => {
-            return (
-            <div key={index} className="row">
-            {
-                row.map((photo) => {
-                    return (photo);
-                })
-            }
-            </div>
-            )
-        })
+        // Don't think I need to chunk it anymore
+        // const rows = _.chunk(photoArray, 4)
+        // return rows.map((row,index) => {
+        //     return (
+        //     <div key={index}>
+        //     {
+        //         row.map((photo) => {
+        //             return (photo);
+        //         })
+        //     }
+        //     </div>
+        //     )
+        // })
+
+        return photoArray;
+
     }
 
     render() {
         return(
-            <div>
+            <div className="grid-gallery">
+            {/* Why is it calling renderGallery twice like this? */}
                 {this.props.window.width < 768 ? 
-                <div className="row" style={{paddingTop: "40px"}}>
-                {this.renderGallery()}
-            </div> :
-                <div className="row">
-                    {this.renderGallery()}
-                </div>
+                this.renderGallery()
+                :
+                this.renderGallery()
                 }
             </div>
-
-
         )
     }
 }

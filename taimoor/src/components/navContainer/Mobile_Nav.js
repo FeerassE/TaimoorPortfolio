@@ -23,30 +23,31 @@ class MobileNav extends Component {
 
     render() {
         console.log(this.props.window);
-        if (this.props.window.width < 768) {
             return(             
-            <div className="fixed-top" id="mobile-nav-container">
-                {this.state.dropDownOpen ?                 
-                    <div className="row">
+            <div className="mobile-nav">
+                {this.state.dropDownOpen ?    
+
+                    <div>
+
                         <Link to={this.props.path}>
                             <img src='./icons/if_menu-alt_134216.svg' onClick={this.onClickHandler} id="bg-button"/>
                         </Link>
-                            <h1 id="menu-title-taimoor-mobile"> Taimoor Khan </h1>
-                    </div>                 
+                            <span className="mobile-nav-title"> Taimoor Khan </span>
+
+                    </div>
+        
                     :
-                    <div className="row">
+                    <div>
+
                     <Link to="/menu">
                         <img src='./icons/if_menu-alt_134216.svg' onClick={this.onClickHandler} id="bg-button"/>
                     </Link>
-                        <h1 id="menu-title-taimoor-mobile"> Taimoor Khan </h1>
-                    </div>                 }
-            </div>
-        )
-    }
+                        <span className="mobile-nav-title"> Taimoor Khan </span>
 
-        else
-        return(
-            null
+                    </div>
+
+                   }
+            </div>
         )
     }
 }
@@ -54,7 +55,6 @@ class MobileNav extends Component {
 // set the z-index higher. Make sure outside of the row. 
 function mapStateToProps(state) {
     return { 
-        window: state.window,
         path: state.path
     };
 }

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import NavBar from './Nav_Bar';
+import Nav from './navContainer/Nav';
 import Main from './Main';
-import MobileNav from './Mobile_Nav';
 
 import { updateDimensions } from '../actions';
 
@@ -22,15 +21,10 @@ componentWillMount() {
   render() {
     return (
       <div className="App">
-        <div className="container-fluid">
-          <div className="row">
-            <MobileNav />
-            <div className="row">
-            <NavBar />        
-            <Main />
-            </div>
+        <div className="grid-app">
+              <Nav />
+              <Main />
           </div>
-        </div>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateCurrentRoute } from '../actions/index';
+import { updateCurrentRoute } from '../../actions/index';
 
 import { Link, withRouter, Redirect } from 'react-router-dom';
 
