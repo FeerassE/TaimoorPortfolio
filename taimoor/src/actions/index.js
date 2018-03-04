@@ -7,6 +7,7 @@ const CONSUMER_SECRET = "A2xlpFDe4eChxps6qaAENKADTpeIFgBEbVqgWDeT";
 
 
 export const FETCH_PHOTOS = 'fetch_photos';
+export const FETCH_HOMEPHOTO = 'fetch_homephoto';
 export const RESIZE = 'resize';
 export const PATH = 'path';
 
@@ -18,6 +19,21 @@ export function fetchPhotos() {
         type: FETCH_PHOTOS,
         payload: request
     };
+}
+
+export function fetchHomePhoto() {
+    let ids = [241015431,235121237,232194491,232194539, 224105251]
+    let idsLength = ids.length;
+    // can try and add this one later
+    function getRandomID(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    const request = axios.get(`${ROOT_URL}/${ids[getRandomID(idsLength)]}?image_size=2048&consumer_key=${CONSUMER_KEY}`)
+    console.log('Home Photo Request: ' + request)
+    return {
+        type: FETCH_HOMEPHOTO,
+        payload: request
+    }
 }
 
 export function updateDimensions(width, height) {

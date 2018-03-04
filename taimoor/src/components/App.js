@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Nav from './navContainer/Nav';
 import Main from './Main';
 
-import { updateDimensions } from '../actions';
+import { updateDimensions, fetchPhotos, fetchHomePhoto } from '../actions';
 
 import {Switch, Route, BrowserRouter, withRouter} from 'react-router-dom';
 
@@ -16,13 +16,17 @@ componentWillMount() {
     window.addEventListener("resize", () => {
       this.props.updateDimensions(window.innerWidth, window.innerHeight);
     });
+  
+  this.props.fetchPhotos();
+
+  this.props.fetchHomePhoto();
+  
 }
 
   render() {
     return (
       <div className="App">
         <div className="grid-app">
-              <Nav />
               <Main />
           </div>
       </div>
@@ -31,4 +35,4 @@ componentWillMount() {
 }
 
 
-export default withRouter(connect(null, { updateDimensions })(App));
+export default withRouter(connect(null, { updateDimensions, fetchPhotos, fetchHomePhoto })(App));
