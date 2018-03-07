@@ -24,20 +24,23 @@ class MobileNav extends Component {
     render() {
         console.log(this.props.window);
             return(             
-            <div className="mobile-nav">
-                {this.state.dropDownOpen ?    
-                    <div className="mobile-nav-bar">
-                        <Link to={this.props.path}>
-                            <img src='./icons/burger-button.svg' onClick={this.onClickHandler} id="bg-button"/>
-                        </Link>
-                            <span className="mobile-nav-title"> Taimoor Khan </span>
-                    </div>
+            <div>
+                {this.state.dropDownOpen ? 
+                        <div className="mobile-nav">
+                            <div className="mobile-nav-bar">
+                                    <img src='./icons/burger-button.svg' onClick={this.onClickHandler} id="bg-button"/>
+                                    <span className="mobile-nav-title"> Taimoor Khan </span>
+                            </div>
+                        </div>
                     :
-                    <div className="mobile-nav-bar">
-                        <Link to="/menu">
-                            <img src='./icons/burger-button.svg' onClick={this.onClickHandler} id="bg-button"/>
-                        </Link>
-                            <span className="mobile-nav-title"> Taimoor Khan </span>
+                    <div>
+                        <div className="mobile-nav">
+                            <div className="mobile-nav-bar">
+                                    <img src='./icons/burger-button.svg' onClick={this.onClickHandler} id="bg-button"/>
+                                    <span className="mobile-nav-title"> Taimoor Khan </span>
+                            </div>
+                        </div>
+                        <DropDown />
                     </div>
                    }
             </div>

@@ -14,7 +14,6 @@ class Main extends Component{
                         <Switch>
                             <Route path="/" exact component={HomeContainer} />
                             <Route path="/gallery" exact component={GalleryContainer}/>
-                            <Route Path="/menu" component={DropDown}/>
                         </Switch>
                 </main>
             </div>

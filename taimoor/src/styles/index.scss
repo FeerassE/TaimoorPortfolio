@@ -6,7 +6,6 @@ body {
     margin: 0px;
 }
 
-
 /********* App Layout ********/
 .grid-app {
     display: grid;
@@ -22,8 +21,10 @@ body {
 .mobile-nav{
     grid-area: mobile-nav;
     width: 100%;
-    height: 50px;
+    height: 40px;
     position: fixed;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.76)
 }
 
 .side-bar{
@@ -67,6 +68,8 @@ body {
 }
 
 .grid-gallery{
+    z-index: 1;
+    padding-top: 40px;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     grid-gap: 6px;
@@ -80,53 +83,126 @@ body {
     object-fit: cover;
 }
 
-#gallery-img img:hover {
-    border-radius: 2%;
-    -webkit-transform: scale(0.99);
-    -ms-transform: scale(0.99);
-    transform: scale(0.99);
+@media(min-width: 769px){
+    #gallery-img img:hover {
+        border-radius: 2%;
+        -webkit-transform: scale(0.99);
+        -ms-transform: scale(0.99);
+        transform: scale(0.99);
+        z-index: 0;
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+/******* Gallery Modal ********/
+.modal-container {
+    padding-left: 10px;
+}
+.gallery-modal {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.767);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(13 , 1fr);
+    grid-template-rows: repeat(6, 50px);
+    grid-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.modal-image{
+    width: 65vw;
+    height: auto;
+    border: 2px solid white;
+    grid-column: 2 / span 8;
+    grid-row: span 7;
+}
+
+.modal-cancel-icon {
+    width: 50px;
+    height: 50px;
+    fill: white;
+    grid-column: 13;
+}
+.modal-cancel-icon:hover {
     cursor: pointer;
 }
 
 
-/********* Nav *********/
+/********* Drop Down *********/
 
-#bg-button {
-    display: inline-block;
-}
-
-#mobile-nav-container {
+.drop-down-menu{
+    z-index: 1000;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.767);
+    color: white;
     width: 100%;
-    z-index: 3;
-    background-color: white;
-}
-
-.nav-selections {
-    padding-top: 5vh;
-}
-
-#nav-item {
-    padding-left: 6px;
-}
-
-#nav_bar_container {
-    padding-left: 20px;
-    padding-right: 15px;
+    height: 100%;
+    margin-top: 40px;
+    text-align: center;
 }
 
 .drop-down-list {
-    padding-left: 50vh;
-    padding-top: 50vh;
-    font-size: 8.2vh;
-    font-size: 4.5vw; 
+    font-size: 40px;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translatey(-80%);
+    padding-left: 0px;
+}
+
+.drop-down-item {
+    margin-top: 20px;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+@media(min-width: 769px){
+    .drop-down-menu{
+        z-index: 1000;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.788);
+        color: white;
+        width: 25%;
+        height: 100%;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .drop-down-list {
+        font-size: 40px;
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        transform: translatey(-90%);
+        padding-left: 0px;
+    }
 }
 
 /******** Mobile Nav Bar *********/
 .mobile-nav-bar {
     text-align: center;
-
+    padding-top: 5px;
 }
 
+.mobile-nav-title {
+    font-size: 20px;
+}
+
+#bg-button {
+    float: left;
+    margin-left: 10px;
+}
+
+#bg-button:hover {
+    cursor: pointer;
+}
 
 /******** Side Bar *********/
 
@@ -156,8 +232,6 @@ body {
 #side-bar-subtitle-photograph:hover {
     cursor: default;
 } 
-
-
 
 .side-bar-list{
     margin-top: 30px;

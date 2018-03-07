@@ -17,27 +17,20 @@ class DropDown extends Component {
         this.props.updateCurrentRoute(path);
     }
     render(){
-        if (this.props.window.width > 768) {
-            return (
-                <Redirect push to={this.props.path}/>
-            )
-        } 
         return (
-                <div className= "dropDownMenu">
+                <div className= "drop-down-menu">
                     <div>
-                        <ul className="navdrop-down-list">
-                            <li onClickSelection={this.onClickSelection("/")} className="nav-item">
-                                <Link to='/'>
-                                    Gallery
-                                </Link>
-                            </li>
-                            <li className="nav-item">
+                        <div className="drop-down-list">
+                            <a href="/"  className="drop-down-item">
+                                Home
+                            </a>    
+                            <a href="/gallery"  className="drop-down-item">
+                                Gallery
+                            </a>
+                            <a href="/services"className="drop-down-item">
                                 Services
-                            </li>
-                            <li className="nav-item">
-                                Blog
-                            </li>
-                        </ul>
+                            </a>
+                        </div>
                     </div>
             </div>
         )
