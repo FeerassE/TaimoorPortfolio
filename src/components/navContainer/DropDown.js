@@ -27,9 +27,9 @@ class DropDown extends Component {
                             <a href="/gallery"  className="drop-down-item">
                                 Gallery
                             </a>
-                            <a href="/services"className="drop-down-item">
+                            {/* <a href="/services"className="drop-down-item">
                                 Services
-                            </a>
+                            </a> */}
                         </div>
                     </div>
             </div>

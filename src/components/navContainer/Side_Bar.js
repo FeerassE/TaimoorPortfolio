@@ -16,9 +16,9 @@ class SideBar extends Component {
                                 <a  href="gallery" className="side-bar-link">
                                     Gallery
                                 </a>
-                                <a  href="#" className="side-bar-link">
+                                {/* <a  href="#" className="side-bar-link">
                                     Services
-                                </a>
+                                </a> */}
                             </ul>
                         </div>
                     </div>
